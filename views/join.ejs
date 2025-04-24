@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <h1>Join the club membership and see the secrets of the universe</h1>
+    <% if(currentUser) { %>
+    <h1><%=currentUser.first_name %></h1>
+    <form action="/users/members/join" method="post">
+      <label for="code">Enter secrete code:</label>
+      <input type="password" name="code" />
+      <button type="submit">join</button>
+    </form>
+    <% } else { %>
+    <h1>Sign up to join club</h1>
+    <h2><a href="/users/signup">Sign Up</a></h2>
+    <h1>You can also login here</h1>
+    <h2><a href="/users/login">login</a></h2>
+    <% } %>
+  </body>
+</html>
